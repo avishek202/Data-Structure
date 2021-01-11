@@ -18,19 +18,15 @@ void push(Stack *s,int item)
         //cout<<s->top;
         s->a[s->top]=item;
     }
-
 }
 void pull(Stack *s)
 {
 
     if(s->top==-1)
-    {
-        cout<<"No element to delete or pull";
-    }
+       cout<<"No element to delete or pull";
     else
-    {
         s->top-=1;
-    }
+
 }
 
 int main()
