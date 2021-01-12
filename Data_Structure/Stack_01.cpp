@@ -27,7 +27,8 @@ void push(stk *s,int item)
     for(int i=0; i<s->c1; i++)
         cout<<s->a[i]<<" ";
     cout<<endl;
-    cout<<"Pop elements: "<<s->a[0]<<endl;
+    cout<<"Top Index Position: "<<s->top<<endl;
+    cout<<"Top element: "<<s->a[0]<<endl;
 
 }
 void pop(stk *s)
@@ -47,8 +48,8 @@ void pop(stk *s)
         for(int i=0; i<s->c1; i++)
             cout<<s->a[i]<<" ";
         cout<<endl;
-        cout<<"d: "<<s->top<<endl;
-        cout<<"Top elements: "<<s->a[0]<<endl;
+        cout<<"Top Index Position: "<<s->top<<endl;
+        cout<<"Top element: "<<s->a[0]<<endl;
     }
 
 
@@ -60,7 +61,14 @@ void add(stk *s)
     {
         sum+=s->a[i];
     }
-    cout<<sum<<endl;
+    cout<<"Sum of all elements: "<<sum<<endl;
+    cout<<"All the elements of Stack: "<<endl;
+    for(int i=0; i<s->c1; i++)
+        cout<<s->a[i]<<" ";
+    cout<<endl;
+    cout<<"Top Index Position: "<<s->top<<endl;
+    cout<<"Top element: "<<s->a[0]<<endl;
+
 }
 int main()
 {
