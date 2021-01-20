@@ -63,6 +63,18 @@ void show(Node* view)
         view= view->next;
     }
 }
+
+Node* addFirst(Node* head,int item)
+{
+    Node* temp;
+    temp = new Node;
+    temp->data=item;
+    temp->next = head;
+
+    head = temp;
+
+    return head;
+}
 int main()
 {
     int n;
@@ -78,12 +90,15 @@ int main()
     cout<<endl;
 
     cout<<"After Delete First Linked List Element: "<<endl;
-    head1 = del_first(head1);
-    show(head1);
-    cout<<endl;
 
-    cout<<"After Delete Last Linked List Element: "<<endl;
+    show(head);
+
+    cout<<endl<<"After Delete Last Linked List Element: "<<endl;
     Node* head3 = del_last(head2);
     show(head3);
+
+    cout<<endl<<"Add "<<endl;
+    Node* head4 = addFirst(head,7);
+    show(head4);
 
 }
