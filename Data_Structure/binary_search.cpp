@@ -23,12 +23,12 @@ int main()
             cout<<"The Number is Found"<<endl;
             break;
         }
-        else if(x>a[mid])
+        else if(x<a[mid])
         {
             li=mid+1;
 
         }
-        else if(x<a[mid])
+        else if(x>a[mid])
         {
             hi=mid-1;
 
