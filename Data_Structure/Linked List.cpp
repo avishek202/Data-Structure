@@ -38,21 +38,22 @@ Node* create_Node(int n)
     return head;
 }
 
-Node* del_first(Node *head)
+Node* del_first(Node *head1)
 {
-    head = head->next;
-    return head;
+    head1 = head1->next;
+    return head1;
 }
+
 Node*  del_last(Node *head)
 {
     Node *head1= head;
-    while(head->next->next!=NULL)
+    while(head1->next->next!=NULL)
     {
-        head = head->next;
+        head1 = head1->next;
     }
-    head->next=NULL;
+    head1->next=NULL;
 
-    return head1;
+    return head;
 
 }
 void show(Node* view)
@@ -62,6 +63,7 @@ void show(Node* view)
         cout<<view->data<<" ";
         view= view->next;
     }
+    cout<<endl;
 }
 
 Node* addFirst(Node* head,int item)
@@ -70,10 +72,30 @@ Node* addFirst(Node* head,int item)
     temp = new Node;
     temp->data=item;
     temp->next = head;
-
     head = temp;
 
     return head;
+}
+Node* addLast(Node* head,int item)
+{
+    Node* temp =new  Node;
+    temp->data=item;
+    temp->next=NULL;
+
+    Node* head1 =  head;
+
+    int c=0;
+    while(head1->next!=NULL)
+    {
+        head1 = head1->next;
+        c++;
+    }
+    head1->next=temp;
+    cout<<c<<endl;
+
+    return head;
+
+
 }
 int main()
 {
@@ -81,24 +103,45 @@ int main()
     cout<<"Enter the Number of Linked List"<<endl;
     cin>>n;
     Node* head = create_Node(n);
-    Node* head1 = head;
-    Node*  head2 = head;
+    //Node* head1 = head;
+    //Node*  head2 = head;
 
     cout<<"All the Linked List Element: "<<endl;
 
     show(head);
-    cout<<endl;
+    //cout<<endl;
 
     cout<<"After Delete First Linked List Element: "<<endl;
 
+    //show(head);
+    Node* head6 = del_first(head);
+    show(head6);
     show(head);
 
+
+
     cout<<endl<<"After Delete Last Linked List Element: "<<endl;
-    Node* head3 = del_last(head2);
+    Node* head3 = del_last(head);
     show(head3);
 
-    cout<<endl<<"Add "<<endl;
+    show(head);
+
+
+
+
+
+
+    /*cout<<endl<<"Add to First: "<<endl;
     Node* head4 = addFirst(head,7);
     show(head4);
+
+   cout<<endl;
+    cout<<"dd"<<endl;
+     show(head);
+     cout<<endl;
+    cout<<"Add to Last: "<<endl;
+    Node* head5 = addLast(head,9);
+    show(head5);*/
+
 
 }
